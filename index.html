@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4f7cff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="存钱罐">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>存钱罐 · 双人记账</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <main id="main">
+    <section class="page active" id="page-home">
+      <div class="loading">加载中…</div>
+    </section>
+    <section class="page" id="page-add"></section>
+    <section class="page" id="page-history"></section>
+    <section class="page" id="page-settings"></section>
+    <section class="page" id="page-records"></section>
+    <section class="page" id="page-history-detail"></section>
+  </main>
+
+  <nav id="tabbar">
+    <button class="tab-item active" data-tab="home" onclick="showPage('home');renderPage('home')">
+      <span class="tab-ico">🏠</span><span>首页</span>
+    </button>
+    <button class="tab-item tab-add" data-tab="add" onclick="showPage('add');renderPage('add')">
+      <span class="tab-add-circle">＋</span><span>记一笔</span>
+    </button>
+    <button class="tab-item" data-tab="history" onclick="showPage('history');renderPage('history')">
+      <span class="tab-ico">📒</span><span>历史</span>
+    </button>
+    <button class="tab-item" data-tab="settings" onclick="showPage('settings');renderPage('settings')">
+      <span class="tab-ico">⚙️</span><span>设置</span>
+    </button>
+  </nav>
+
+  <div id="overlay-root"></div>
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+</body>
+</html>
